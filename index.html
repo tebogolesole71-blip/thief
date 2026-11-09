@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Three Shadows - A fictional crime story about Kabelo, Wayne and Malvin Black.">
+<title>The Three Shadows | Crime Chronicles</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #0b0d12;
+    color: #eee;
+    line-height: 1.7;
+}
+
+header {
+    background: #10141d;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292e39;
+}
+
+.logo {
+    color: #d6a84f;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 22px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d6a84f;
+}
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero small {
+    color: #d6a84f;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 78px);
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 30px;
+    background: #d6a84f;
+    color: #111;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section {
+    padding: 75px 0;
+}
+
+.section-title {
+    color: #d6a84f;
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.article {
+    max-width: 850px;
+    margin: auto;
+}
+
+.article p {
+    margin-bottom: 20px;
+    color: #c9c9c9;
+    font-size: 17px;
+}
+
+.article h3 {
+    color: #d6a84f;
+    margin: 30px 0 12px;
+    font-size: 23px;
+}
+
+.quote {
+    border-left: 4px solid #d6a84f;
+    padding: 20px;
+    background: #151a24;
+    margin: 30px 0;
+    font-style: italic;
+    color: #fff;
+    font-size: 20px;
+}
+
+.characters {
+    background: #11151e;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #1a202c;
+    padding: 30px;
+    border: 1px solid #303644;
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #d6a84f;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #292e39;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #d6a84f;
+    border: 2px solid #d6a84f;
+}
+
+.card h3 {
+    color: #d6a84f;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #bbb;
+    font-size: 15px;
+}
+
+.timeline {
+    max-width: 750px;
+    margin: auto;
+}
+
+.event {
+    border-left: 2px solid #d6a84f;
+    padding: 5px 25px 30px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.event::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    background: #d6a84f;
+    border-radius: 50%;
+}
+
+.event h3 {
+    color: #d6a84f;
+}
+
+.event p {
+    color: #bbb;
+}
+
+.warning {
+    background: #171c27;
+    padding: 30px;
+    border: 1px solid #353d4d;
+    text-align: center;
+    margin-top: 30px;
+    color: #ccc;
+}
+
+footer {
+    background: #080a0e;
+    text-align: center;
+    padding: 35px 15px;
+    color: #888;
+    border-top: 1px solid #292e39;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d6a84f;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CRIME CHRONICLES</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#story">The Story</a>
+        <a href="#characters">Characters</a>
+        <a href="#timeline">Timeline</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <small>A Fictional Crime Chronicle</small>
+    <h1>The Three Shadows</h1>
+    <p>
+        Three young men. One dangerous reputation.
+        A city that would never forget their names.
+        Discover the fictional story of Kabelo, Wayne and Malvin Black.
+    </p>
+    <a href="#story" class="btn">READ THE STORY</a>
+</section>
+
+<!-- STORY -->
+<section id="story">
+<div class="container article">
+
+    <h2 class="section-title">THE RISE OF THE THREE SHADOWS</h2>
+
+    <p style="text-align:center;color:#d6a84f;">
+        SPECIAL INVESTIGATION | CRIME & MYSTERY | FICTION
+    </p>
+
+    <h3>The Beginning</h3>
+
+    <p>
+        Every city has a story hidden in its darkest streets.
+        Some stories are about heroes, others about dreams,
+        but this one is about three young men whose names
+        became connected with fear, crime and betrayal.
+    </p>
+
+    <p>
+        Their names were Kabelo, Wayne and Malvin Black.
+        Together, people called them "The Three Shadows."
+        They were known in this fictional city for robbing
+        unsuspecting people and leaving communities feeling unsafe.
+    </p>
+
+    <h3>Kabelo: The Dreamer</h3>
+
+    <p>
+        Kabelo was the first member of the group.
+        He was intelligent, ambitious and always looking
+        for a shortcut to success. But his decisions
+        eventually led him down a dangerous road.
+    </p>
+
+    <h3>Wayne: The Loyal Friend</h3>
+
+    <p>
+        Wayne was Kabelo's closest friend. He believed
+        loyalty meant standing beside his friends,
+        even when they made terrible decisions.
+        Slowly, he became trapped in a world he could
+        no longer control.
+    </p>
+
+    <h3>Malvin Black: The Mystery</h3>
+
+    <p>
+        Malvin Black was the quietest of the three.
+        Nobody really understood what he was thinking.
+        His mysterious personality made him an important
+        part of the group's dark reputation.
+    </p>
+
+    <div class="quote">
+        "The streets may remember your name, but they
+        never forget the pain you leave behind."
+    </div>
+
+    <h3>The Night Everything Changed</h3>
+
+    <p>
+        One cold evening, the three friends became involved
+        in another robbery. But this time, things did not
+        go according to plan. Their actions attracted
+        attention, and the people they had hurt began
+        demanding justice.
+    </p>
+
+    <p>
+        For the first time, the three men realised that
+        their choices had consequences. Their friendship
+        began to break apart. Suspicion replaced trust,
+        and fear replaced confidence.
+    </p>
+
+    <h3>The Fall of the Shadows</h3>
+
+    <p>
+        As the investigation continued, the group faced
+        difficult questions. Kabelo wanted to escape
+        his past. Wayne struggled with guilt, while
+        Malvin Black began questioning whether their
+        friendship had ever been real.
+    </p>
+
+    <p>
+        Eventually, the three discovered that no amount
+        of money could buy back their freedom, their
+        reputation or the trust they had destroyed.
+    </p>
+
+    <h3>The Lesson</h3>
+
+    <p>
+        The story of the Three Shadows is a reminder
+        that crime does not create lasting success.
+        Every action has consequences, and the people
+        who suffer most are often innocent members
+        of the community.
+    </p>
+
+</div>
+</section>
+
+<!-- CHARACTERS -->
+<section class="characters" id="characters">
+<div class="container">
+
+    <h2 class="section-title">MEET THE THREE</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="avatar">K</div>
+            <h3>KABELO</h3>
+            <p>
+                The ambitious one. His desire for a better
+                life led him into dangerous decisions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">W</div>
+            <h3>WAYNE</h3>
+            <p>
+                The loyal friend. He followed the wrong
+                people and eventually questioned his choices.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">M</div>
+            <h3>MALVIN BLACK</h3>
+            <p>
+                The mysterious one. A quiet character
+                surrounded by secrets and uncertainty.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+<div class="container">
+
+    <h2 class="section-title">THE STORY TIMELINE</h2>
+
+    <div class="timeline">
+
+        <div class="event">
+            <h3>Chapter 01 — The Friendship</h3>
+            <p>Three young men become close friends.</p>
+        </div>
+
+        <div class="event">
+            <h3>Chapter 02 — The Wrong Path</h3>
+            <p>Their decisions lead them into a life of crime.</p>
+        </div>
+
+        <div class="event">
+            <h3>Chapter 03 — The Robbery</h3>
+            <p>Another robbery changes everything.</p>
+        </div>
+
+        <div class="event">
+            <h3>Chapter 04 — The Investigation</h3>
+            <p>The community demands answers and justice.</p>
+        </div>
+
+        <div class="event">
+            <h3>Chapter 05 — The Consequences</h3>
+            <p>The three friends face the results of their actions.</p>
+        </div>
+
+    </div>
+
+    <div class="warning">
+        <h3 style="color:#d6a84f;margin-bottom:10px;">
+            A STORY WITH A MESSAGE
+        </h3>
+        <p>
+            This is a fictional crime story created for
+            entertainment and storytelling purposes.
+            Crime hurts communities, destroys trust and
+            carries serious consequences.
+        </p>
+    </div>
+
+</div>
+</section>
+
+<footer>
+    <p>© 2026 <span>CRIME CHRONICLES</span> | All Rights Reserved</p>
+    <p>THE THREE SHADOWS — A FICTIONAL STORY</p>
+</footer>
+
+</body>
+</html>
